@@ -9,6 +9,7 @@ const passport = require('passport');
 require('./auth.js');
 
 //initialize middleware
+app.use(express.json());
 app.use(cors({ credentials: true, origin: process.env.CLIENT_URL }));
 
 app.use(session({

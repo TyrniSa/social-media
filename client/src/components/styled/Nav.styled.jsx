@@ -17,7 +17,7 @@ display: none;
 
 export const MobileMenu = styled.nav`
 display: flex;
-background-color: ${({ theme }) => theme.elevation_1};
+background-color: ${({ theme }) => theme.elevation_2};
 position: absolute;
 top: 0;
 left: 0;
@@ -47,7 +47,7 @@ display: none;
 
 export const DesktopMenu = styled.nav`
 display: flex;
-background-color: ${({ theme }) => theme.elevation_1};
+background-color: ${({ theme }) => theme.elevation_2};
 align-items: center;
 padding: 0.5rem 1rem;
 max-width: 100%;
