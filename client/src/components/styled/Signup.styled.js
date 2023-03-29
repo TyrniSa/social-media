@@ -19,13 +19,16 @@ align-items: center;
   align-items: center;
   box-shadow: ${({ theme }) => theme.shadow};
   text-align: center;
-  h1{
+  /* h1{
     font-family: "Satisfy", cursive;
     font-weight: 400;
+  } */
+  img{
+    width: 90%;
+    border-radius: 10px;
+    opacity: 0.8;
   }
-}
-
-`;
+}`;
 
 export const SignupButton = styled.button`
 font-family: "Montserrat alternates";

@@ -5,7 +5,8 @@ const cors = require('cors');
 const session = require('express-session');
 const passport = require('passport');
 
-
+//import middleware
+require('./auth.js');
 
 //initialize middleware
 app.use(cors({ credentials: true, origin: process.env.CLIENT_URL }));
