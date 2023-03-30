@@ -25,6 +25,8 @@ top: 0;
 left: 0;
 bottom: 0;
 width: 35%;
+height: 25vh;
+border-radius: 10px;
 min-width: 100px;
 flex-direction:column;
 padding: 4rem 0.5rem;

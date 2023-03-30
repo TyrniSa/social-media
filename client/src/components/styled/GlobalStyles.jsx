@@ -9,20 +9,17 @@ const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   background-color: ${({theme}) => theme.body};
-  color: white;
+  color: ${({ theme }) => theme.text};
   font-family: "Montserrat Alternates", 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+};
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-
-`;
+}`;
 
 export default GlobalStyle;
