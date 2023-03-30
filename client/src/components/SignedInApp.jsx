@@ -6,7 +6,7 @@ import Nav from "./Nav";
 import PostModal from "./PostModal";
 import { StyledSignedInApp } from "./styled/SignedInApp.styled";
 import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools"
+// import { ReactQueryDevtools } from "react-query/devtools"
 
 const queryClient = new QueryClient();
 
@@ -22,7 +22,7 @@ const SignedInApp = () => {
         </Routes>
         {modalOpen && <PostModal setModal={setModal} />}
       </StyledSignedInApp>
-      <ReactQueryDevtools position="bottom-right" initialIsOpen={false}/>
+      {/* <ReactQueryDevtools position="bottom-right" initialIsOpen={false}/> */}
     </QueryClientProvider>
   )
 };

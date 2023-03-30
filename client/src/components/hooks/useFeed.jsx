@@ -1,9 +1,9 @@
 import { useInfiniteQuery } from "react-query";
 
-const useFeed = () => {
+const useFeed = (path = "feed") => {
   const SERVER_URL = "http://localhost:4000"
-  return useInfiniteQuery("feed", async ({ pageParam = 0 }) => {
-    const res = await fetch(`${SERVER_URL}/feed?cursor=${pageParam}`, {
+  return useInfiniteQuery(`${path}`, async ({ pageParam = 0 }) => {
+    const res = await fetch(`${SERVER_URL}/${path}?cursor=${pageParam}`, {
       credentials: "include",
     });
     if (!res.ok) {

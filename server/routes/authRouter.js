@@ -3,10 +3,6 @@ const router = express.Router();
 const passport = require('passport');
 require('dotenv').config();
 
-// router.get("/", (req, res) => {
-//   res.send("auth")
-// });
-
 router.get("/google", passport.authenticate("google", {
   scope: "profile",
 }

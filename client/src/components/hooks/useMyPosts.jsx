@@ -1,9 +1,9 @@
 import { useInfiniteQuery } from "react-query";
 
-const useMyPosts = () => {
+const useMyPosts = (path = "my_posts") => {
   const SERVER_URL = "http://localhost:4000"
-  return useInfiniteQuery("my_posts", async ({ pageParam = 0 }) => {
-    const res = await fetch(`${SERVER_URL}/my_posts?cursor=${pageParam}`, {
+  return useInfiniteQuery(`${path}`, async ({ pageParam = 0 }) => {
+    const res = await fetch(`${SERVER_URL}/${path}?cursor=${pageParam}`, {
       credentials: "include",
     });
     if (!res.ok) {
