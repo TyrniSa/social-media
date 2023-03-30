@@ -56,7 +56,8 @@ export const StyledLoadMoreButton = styled.div`
   height: 50px;
   margin: 0.1rem auto 1rem;
   padding: 0.5rem 1rem;
-  & > button {
+  button {
+    padding: 0.5rem 1rem;
     font-size: 1.2rem;
     border-radius: 10px;
     font-family: "Montserrat Alternates", 'Roboto', 'Oxygen';

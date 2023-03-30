@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const isAuth = require("../isAuth")
 const pool = require("../db");
+require('dotenv').config();
 
 // router.get("/", (req,res) => {
 //   res.send("hi home")
@@ -34,6 +35,13 @@ router.get("/my_posts", isAuth, async (req, res) => {
     "SELECT u.username, u.img, p.id, p.body FROM users u INNER JOIN posts p ON u.id = p.user_id " +
     "WHERE p.user_id = $1 ORDER BY p.id DESC LIMIT 5 OFFSET $2", [req.user.id, cursor]);
   res.send({ cursor: cursor * 1 + 5, posts: posts.rows });
+});
+
+router.post('/logout', isAuth, function(req, res, next) {
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect(`${process.env.CLIENT_URL}`);
+  });
 });
 
 module.exports = router;
