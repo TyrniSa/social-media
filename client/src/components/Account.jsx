@@ -1,8 +1,13 @@
+
 import useMyPosts from "./hooks/useMyPosts";
 import Post from "./Post";
 import { StyledFeed, StyledLoadMoreButton, StyledUser } from "./styled/Feed.styled";
 
 function Account() {
+  // const Logout = () => {
+
+  //   };
+
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useMyPosts();
   return (
       <StyledFeed>
@@ -10,11 +15,11 @@ function Account() {
         <img src={data?.pages[0]?.posts[0].img} alt="profile"/>
         {data?.pages[0]?.posts[0].username}
         {/* <StyledLoadMoreButton>
-          <button>Log out</button>
+          <button onClick={Logout}>Log out</button>
         </StyledLoadMoreButton> */}
       </StyledUser>
         <h1>My thoughts</h1>
-        {data?.pages?.map(page => page.posts.map(post => <Post post={post} />))}
+        {data?.pages?.map(page => page.posts.map(post => <Post post={post} key={post.id}/>))}
         <StyledLoadMoreButton>
           {hasNextPage && !isFetchingNextPage && (
             <button onClick={() => fetchNextPage()}>Load More</button>

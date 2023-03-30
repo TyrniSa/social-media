@@ -8,7 +8,7 @@ const Feed = () => {
   return (
     <StyledFeed>
       <h1>Recent thoughts</h1>
-      {data?.pages?.map(page => page.posts.map(post => <Post post={post}/>))}
+      {data?.pages?.map(page => page.posts.map(post => <Post post={post} key={post.id}/>))}
       <StyledLoadMoreButton>
         {hasNextPage && !isFetchingNextPage && (
           <button onClick={() => fetchNextPage()}>Load More</button>
