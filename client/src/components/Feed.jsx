@@ -1,9 +1,15 @@
-function Feed() {
-  return (
-    <div>
-      Feed
-    </div>
-  )
-}
+import useFeed from "./hooks/useFeed";
 
-export default Feed
+const Feed = () => {
+  const { data, fetchNextPage, hasNextPage, isFetchingNextPage } = useFeed();
+  return (
+    <>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
+      {hasNextPage && !isFetchingNextPage && (
+        <button onClick={() => fetchNextPage()}>load more</button>
+      )}
+    </>
+  );
+};
+
+export default Feed;

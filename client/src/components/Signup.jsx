@@ -12,14 +12,14 @@ const Signup = () => {
 
   return (
     <StyledSignup>
-      <form onSubmit={Signin}>
+      <form onSubmit={Signin} data-prompt="select_account">
         <div>
           {/* <h1>My thoughts...</h1> */}
-          <img src={logo} alt="app logo"/><br/>
+          <img src={logo} alt="app logo" /><br />
           <sub>Social media app for your thoughts</sub>
         </div>
         <SignupButton >
-          Sign in with Google <Google/>
+          Sign in with Google <Google />
         </SignupButton>
       </form>
     </StyledSignup>
